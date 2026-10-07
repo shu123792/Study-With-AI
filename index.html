@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyWithAI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <h1>StudyWithAI</h1>
+                <p>Your personal AI study assistant</p>
+            </div>
+        </div>
+
+        <div class="online-status">
+            <span></span>
+            AI Tutor Online
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">SMARTER STUDYING</p>
+                <h2>Learn faster.<br><span>Understand better.</span></h2>
+                <p class="hero-text">
+                    Ask questions, solve difficult problems, create notes,
+                    and prepare for exams with your AI study partner.
+                </p>
+
+                <button class="primary-button" onclick="focusChat()">
+                    Start Studying →
+                </button>
+            </div>
+
+            <div class="hero-card">
+                <div class="sparkle">✦</div>
+                <h3>What can I help you with?</h3>
+                <p>Ask me anything about your studies.</p>
+
+                <div class="example-question">
+                    <strong>Example</strong>
+                    <br>
+                    Explain Newton's laws with examples
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-grid">
+            <button class="feature-card blue" onclick="setQuestion('Solve this problem step by step: ')">
+                <div class="feature-icon">∑</div>
+                <h3>Problem Solver</h3>
+                <p>Get clear, step-by-step solutions.</p>
+            </button>
+
+            <button class="feature-card purple" onclick="setQuestion('Create short revision notes about ')">
+                <div class="feature-icon">▤</div>
+                <h3>AI Notes</h3>
+                <p>Turn any topic into useful notes.</p>
+            </button>
+
+            <button class="feature-card green" onclick="setQuestion('Create a quiz about ')">
+                <div class="feature-icon">✓</div>
+                <h3>Practice Quiz</h3>
+                <p>Test your knowledge with questions.</p>
+            </button>
+
+            <button class="feature-card orange" onclick="showPlanner()">
+                <div class="feature-icon">◷</div>
+                <h3>Study Planner</h3>
+                <p>Organize your daily study time.</p>
+            </button>
+        </section>
+
+        <section class="workspace">
+            <div class="chat-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">AI TUTOR</p>
+                        <h2>Ask your question</h2>
+                    </div>
+
+                    <select id="subject">
+                        <option>General</option>
+                        <option>Mathematics</option>
+                        <option>Physics</option>
+                        <option>Chemistry</option>
+                        <option>Computer Science</option>
+                        <option>Python</option>
+                        <option>English</option>
+                    </select>
+                </div>
+
+                <div id="answer-box" class="answer-box">
+                    <div class="answer-placeholder">
+                        <div class="big-sparkle">✦</div>
+                        <h3>Your answer will appear here</h3>
+                        <p>Ask a question below to start learning.</p>
+                    </div>
+                </div>
+
+                <div class="question-area">
+                    <textarea
+                        id="question"
+                        placeholder="For example: Explain photosynthesis in simple words..."
+                    ></textarea>
+
+                    <button id="ask-button" class="primary-button">
+                        Ask StudyWithAI →
+                    </button>
+                </div>
+            </div>
+
+            <aside class="progress-panel">
+                <p class="eyebrow">YOUR PROGRESS</p>
+                <h2>Keep learning</h2>
+
+                <div class="progress-circle">
+                    <strong id="progress-value">0%</strong>
+                    <span>weekly goal</span>
+                </div>
+
+                <div class="progress-row">
+                    <span>Questions asked</span>
+                    <strong id="question-count">0</strong>
+                </div>
+
+                <div class="progress-row">
+                    <span>Study sessions</span>
+                    <strong id="session-count">0</strong>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Study tip</strong>
+                    <p>
+                        Try explaining a topic in your own words.
+                        It improves understanding and memory.
+                    </p>
+                </div>
+
+                <button class="secondary-button" onclick="resetProgress()">
+                    Reset progress
+                </button>
+            </aside>
+        </section>
+
+        <section id="planner" class="planner hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLANNER</p>
+                    <h2>Today's study plan</h2>
+                </div>
+            </div>
+
+            <div class="planner-form">
+                <input id="task-input" type="text" placeholder="Add a study task">
+                <input id="time-input" type="number" placeholder="Minutes">
+                <button class="primary-button" onclick="addTask()">Add task</button>
+            </div>
+
+            <div id="task-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>StudyWithAI • Built for better learning</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
